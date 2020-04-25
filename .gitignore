@@ -5,3 +5,4 @@ parsed_videos_search_page.json
 random_forest_20200422.pkl.z
 lgbm_20200422.pkl.z
 title_vectorizer_20200422.pkl.z
+deploy/__pycache__/

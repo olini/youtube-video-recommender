@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="display-4 list-header">30 videos with best score</h1>
+
+<table class="table table-sm table-striped table-predictions">
+    <thead>
+    <tr>
+        <th scope="col">Video</th>
+        <th scope="col">Score</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for prediction in predictions %}
+    <tr>
+        <td><a href="{{prediction.video_link}}">{{prediction.video_title}}</a></td>
+        <td>{{prediction.video_score}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
