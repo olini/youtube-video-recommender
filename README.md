@@ -1,5 +1,7 @@
 # youtube-video-recommender
 
+#### *Project based on the online course from Mario Filho, [Como Criar uma Solução Completa de Data Science](https://hotmart.com/product/como-criar-uma-solucao-completa-de-data-science)*
+
 This project consists on scraping videos from YouTube about certain keywords ('machine learning', 'data science' and 'kaggle'), process and label this data, determine features and create a machine learning solution to recommend new relevant videos on YouTube about these topics.
 ###### Observation: In this context, "relevant videos" are based on the labelling phase, the criteria used is better explained in the notebook.
 
