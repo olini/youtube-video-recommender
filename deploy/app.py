@@ -4,21 +4,18 @@ import os
 import json
 import run_backend
 import time
-#import sqlite3 as sql
+import sqlite3 as sql
 
 app = Flask(__name__)
 
 def get_predictions():
     videos = []
     
-    new_videos_json = 'new_videos.json'
-    if not os.path.exists(new_videos_json):
-        run_backend.update_db()
-        
-    with open(new_videos_json, 'r') as data_file:
-        for line in data_file:
-            line_json = json.loads(line)
-            videos.append(line_json)
+    with sql.connect(run_backend.db_name) as conn:
+        cursor = conn.cursor()
+        for row in cursor.execute("SELECT * FROM videos"):
+            row_json = {"title": row[0], "video_id": row[1], "score": row[2]}
+            videos.append(row_json)
     
     videos_unique = [i for n, i in enumerate(videos) if i not in videos[n + 1:]] # erase duplicates
 
